@@ -1,8 +1,8 @@
 # Veri Bilim - Yapay Öğrenme Yaz Okulu, 2017<br />"Matematiksel Temeller ve Vaka Çalışmaları"
 
-Veri kümeleri ve kullanılacak programların listesi **hazırlanma aşamasındadır**. Program detayları aşağıda verilmiştir.
+Uygulama derslerinde ağırlıklı olarak Python 3.6 programlama dili kullanılacaktır. Dersler için gerekli olan paketleri de içeren [Anaconda](https://www.anaconda.com/download/) dağıtımını bilgisayarınıza kurup gelmeniz yeterli olacaktır.
 
-**Kayıt formu** için [tıklayınız](https://drive.google.com/open?id=1m9je849qi3Te5eqCFTEQ1y4GJ0y9s0eC0alOoc2oDK8).
+Program detayları aşağıda verilmiştir.
 
 ## Program
 
