@@ -67,7 +67,6 @@ Program detayları aşağıda verilmiştir.
 4. Değişim noktası modelleri
 5. Saklı Markov modelleri
 
-
 ### Paralel Programlama (Kamer Kaya)
 
 1. Paralel ve dağıtık hesaplamanın temelleri
@@ -75,7 +74,7 @@ Program detayları aşağıda verilmiştir.
 3. CUDA ile GPU tabanlı paralel hesaplamaya giriş
 4. Python ile paralel hesaplamaya giriş
 
-### Paralel Öğrenme (Kamer Kaya)
+### Paralel Öğrenme (Berrin Yanıkoğlu, Sara Ahmed, Kamer Kaya)
 
 1. Python ile paralel makine öğrenmesi
 2. Derin öğrenme
@@ -94,6 +93,10 @@ Program detayları aşağıda verilmiştir.
 
 
 ## Dersleri Verenler
+
+### Sara Ahmed
+
+Sara Ahmed, lisans derecesini 2011'de Mısır'ın Ain Shams Üniversitesi'nden, yüksek lisans derecesini 2014 yılında Nil Üniversitesi'nden almıştır. Şu anda Sabancı Üniversitesi'nde derin öğrenme ve nitelik temelli sınıflandırma üzerine doktora çalışmalarını sürdürmektedir.
 
 ### İlker Birbil
 
@@ -114,6 +117,10 @@ Kamer Kaya, doktorasını 2009 yılında Bilkent Üniversitesi Bilgisayar Mühen
 ### Kaan Öztürk
 
 Kaan Öztürk, fizik lisans ve yüksek lisans derecelerini Boğaziçi Üniversitesi'nden, fizik doktora derecesini Rice Üniversitesi'nden aldı. Işık ve Yeditepe üniversitelerinin bilişim bölümlerinde öğretim üyesi olarak görev yaptı. 2015-2016 döneminde TÜBİTAK desteğiyle Rice Üniversitesi'nde ziyaretçi araştırmacı, 2016-2017 döneminde ise Sabancı Üniversitesi'nde doktoraüstü araştırmacı olarak çalıştı. Yapay öğrenme uygulamaları, hesaplamalı fizik, karmaşık sistemler konularıyla ilgileniyor.
+
+### Berrin Yanıkoğlu
+
+Berrin Yanıkoğlu, 1988 yılında Boğaziçi Üniversitesi Bilgisayar Bilimleri ve Matematik Bölümlerinden lisans diplomalarını aldı. 1993 yılında, Dartmouth College'de Bilgisayar Bilimleri alanında doktora çalışmalarını tamamladı. 2000 yılından beri Sabancı Üniversitesi Mühendislik ve Doğa Bilimleri Fakültesi’nde öğretim üyesi olarak görev yapmaktadır. Yanıkoğlu'nun araştırma alanları el yazısı tanıma, biyometri (imza, yüz, parmak izi), fotoğraflardan bitki tanıma ve duygu analizi üzerine odaklanarak görüntü anlama ve metin analizlerine uygulanan model tanıma ve makine öğrenimi alanlarındadır. Dr. Yanıkoğlu, öğrencileri ve meslektaşları ile birlikte yaptıkları çalışmalarla çeşitli uluslararası imza doğrulama yarışmalarında birincilik ödülü kazanmıştır.
 
 ### Sinan Yıldırım
 
