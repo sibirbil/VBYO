@@ -120,7 +120,7 @@ Kaan Öztürk, fizik lisans ve yüksek lisans derecelerini Boğaziçi Üniversit
 
 ### Berrin Yanıkoğlu
 
-Berrin Yanıkoğlu, 1988 yılında Boğaziçi Üniversitesi Bilgisayar Bilimleri ve Matematik Bölümlerinden lisans diplomalarını aldı. 1993 yılında, Dartmouth College'de Bilgisayar Bilimleri alanında doktora çalışmalarını tamamladı. 2000 yılından beri Sabancı Üniversitesi Mühendislik ve Doğa Bilimleri Fakültesi’nde öğretim üyesi olarak görev yapmaktadır. Yanıkoğlu'nun araştırma alanları el yazısı tanıma, biyometri (imza, yüz, parmak izi), fotoğraflardan bitki tanıma ve duygu analizi üzerine odaklanarak görüntü anlama ve metin analizlerine uygulanan model tanıma ve makine öğrenimi alanlarındadır. Dr. Yanıkoğlu, öğrencileri ve meslektaşları ile birlikte yaptıkları çalışmalarla çeşitli uluslararası imza doğrulama yarışmalarında birincilik ödülü kazanmıştır.
+Berrin Yanıkoğlu, 1988 yılında Boğaziçi Üniversitesi Bilgisayar Bilimleri ve Matematik Bölümlerinden lisans diplomalarını aldı. 1993 yılında, Dartmouth College'de Bilgisayar Bilimleri alanında doktora çalışmalarını tamamladı. 2000 yılından beri Sabancı Üniversitesi Mühendislik ve Doğa Bilimleri Fakültesi’nde öğretim üyesi olarak görev yapmaktadır. Dr. Yanıkoğlu'nun araştırma alanları el yazısı tanıma, biyometri (imza, yüz, parmak izi), fotoğraflardan bitki tanıma ve duygu analizi üzerine odaklanarak görüntü anlama ve metin analizlerine uygulanan model tanıma ve makine öğrenimidir. Dr. Yanıkoğlu, öğrencileri ve meslektaşları ile birlikte yaptıkları çalışmalarla çeşitli uluslararası imza doğrulama yarışmalarında birincilik ödülü kazanmıştır.
 
 ### Sinan Yıldırım
 
