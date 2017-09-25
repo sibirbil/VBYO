@@ -1,1 +1,0 @@
-Bu kısım yapım aşamasında.

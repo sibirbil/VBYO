@@ -1,0 +1,177 @@
+
+/* - ++resource++plone.app.discussion.stylesheets/discussion.css - */
+@media screen {
+/* https://www.pik-potsdam.de/portal_css/++resource++plone.app.discussion.stylesheets/discussion.css?original=1 */
+/* */
+.discussion .hide {
+display: none;
+}
+/* */
+.discussion,
+#commenting {
+/* */
+clear: both;
+}
+.comment {
+}
+.commentImage {
+float: left;
+margin-right: 0.5em;
+height: 3.5em;
+}
+.commentImage a:link {
+/* */
+border: 0px;
+}
+.commentImage img {
+}
+.commentDate {
+display: block;
+font-size: 85%;
+line-height: 1.5em;
+padding-top: 0.5em;
+color: #76797C;
+}
+.commentBody {
+clear: both;
+margin: 1em 0;
+overflow: auto;
+border: 1px solid #ccc;
+}
+.commentBody p {
+float: left;
+}
+.discussion .documentByLine {
+float: left;
+margin-left: 0;
+margin-bottom: 0.5em;
+}
+.commentActions {
+float: right;
+text-align: right;
+}
+.discussion .discreet {
+color: #666666;
+font-size: 85%;
+}
+.loginbutton {
+margin-bottom: 1.25em;
+}
+.commentactionsform {
+display: inline;
+}
+.replyTreeLevel0 {
+margin-left: 0em;
+}
+.replyTreeLevel1 {
+margin-left: 1em;
+}
+.replyTreeLevel2 {
+margin-left: 2em;
+}
+.replyTreeLevel3 {
+margin-left: 3em;
+}
+.replyTreeLevel4 {
+margin-left: 4em;
+}
+.replyTreeLevel5 {
+margin-left: 5em;
+}
+.replyTreeLevel6 {
+margin-left: 6em;
+}
+.replyTreeLevel7 {
+margin-left: 7em;
+}
+.replyTreeLevel8 {
+margin-left: 8em;
+}
+.replyTreeLevel9 {
+margin-left: 9em;
+}
+.replyTreeLevel10 {
+margin-left: 10em;
+}
+.defaultuserimg {
+border: 0;
+}
+/* */
+.reply fieldset {
+/* */
+margin: 0 !important;
+}
+.reply .text-widget {
+display: block;
+}
+.reply-to-comment-button {
+display: none;
+}
+.cancelreplytocomment {
+display: none;
+}
+/* */
+#bulkactions {
+text-align: left;
+}
+#dobulkaction {
+margin: 0.3em 0;
+}
+.comment-publish-button {
+float: left;
+margin-right: 0.5em;
+}
+.comment-delete-button {
+float: left;
+}
+#review-comments {
+margin: 0;
+width: 100%;
+}
+#review-comments tbody tr {
+vertical-align: top
+}
+#fieldset-moderate-comments {
+padding: 2em 1em;
+}
+/* */
+.template-discussion-settings .unclickable {
+opacity: 0.6;
+filter: alpha(opacity = 50);
+}
+/* */
+/* */
+.row #dobulkaction {
+margin: 0;
+}
+.row #commenting {
+font-size: 80%;
+}
+.row #commenting .formControls {
+margin: 0;
+}
+.row #commenting textarea,
+.row .discussion textarea {
+font: 100% Monaco, "Courier New", Courier, monospace;
+width: 100%;
+}
+.row #commenting fieldset,
+.row .discussion fieldset {
+border: 0.1em solid #329fd7;
+border-style: solid none none none;
+}
+.row #commenting legend,
+.row .discussion legend {
+padding: 0.5em 0.5em 0.5em 0;
+font-size: 85%;
+}
+.row #commenting label,
+.row .discussion label {
+font-weight:bold;
+}
+/* */
+.overlay-edit-comment textarea {
+height: 10em;
+}
+}
+

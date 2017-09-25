@@ -1,0 +1,1102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0072)https://www.pik-potsdam.de/members/linstead/guides/matlab-on-the-cluster -->
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en" class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    
+
+    <meta name="generator" content="Plone - http://plone.org">
+
+    
+      <!--<base href="https://www.pik-potsdam.de/members/linstead/guides/matlab-on-the-cluster/matlab-distributed-computing-toolbox">--><base href="."><!--[if lt IE 7]></base><![endif]-->
+    
+
+    
+        <meta content="Using the Matlab Distributed Computing Server and Parallel Computing Toolbox for distributed and parallel computations on the HPC2015 cluster" name="description">
+
+  
+    <link rel="stylesheet" type="text/css" media="screen" href="./Matlab Distributed Computing Server _ Parallel Computing Toolbox — PIK Research Portal_files/reset-cachekey-fc743cd3abfaa415355cc1c73646a70c.css">
+    <style type="text/css" media="screen">@import url(https://www.pik-potsdam.de/portal_css/PIK%20Portal/base-cachekey-7f744fb4b3b26cbd7894410f7eeadaef.css);</style>
+    <link rel="stylesheet" type="text/css" media="screen" href="./Matlab Distributed Computing Server _ Parallel Computing Toolbox — PIK Research Portal_files/collective.js.jqueryui.custom.min-cachekey-7a5fb8991c4becb75a1b290476bff5c5.css">
+    <style type="text/css">@import url(https://www.pik-potsdam.de/portal_css/PIK%20Portal/columns-cachekey-73643f1a23d675d53a62e07229a7e871.css);</style>
+    <link rel="stylesheet" type="text/css" media="screen" href="./Matlab Distributed Computing Server _ Parallel Computing Toolbox — PIK Research Portal_files/resourceplone.app.discussion.stylesheetsdiscussion-cachekey-b5c3af6296af3ee97046824828ea20a5.css">
+    <style type="text/css" media="screen">@import url(https://www.pik-potsdam.de/portal_css/PIK%20Portal/pik-cachekey-7296cb14d9419b74bfd2fc1a5efe5ee9.css);</style>
+    <style type="text/css" media="all">@import url(https://www.pik-potsdam.de/portal_css/PIK%20Portal/solgema_contextualcontentmenu-cachekey-40308e6dfcf608eae8a4bcc69b5eb2cb.css);</style>
+    <style type="text/css" media="screen">@import url(https://www.pik-potsdam.de/portal_css/PIK%20Portal/resourcepik.theme.stylesheetsmain-cachekey-6787fdc72b1c91477bde7b7d6458a91a.css);</style>
+    <style type="text/css" media="screen">@import url(https://www.pik-potsdam.de/portal_css/PIK%20Portal/resourcecollective.flowplayer.cssflowplayer-cachekey-79d2b0b4f29004e69f6716521c12effa.css);</style>
+    <link rel="stylesheet" type="text/css" href="./Matlab Distributed Computing Server _ Parallel Computing Toolbox — PIK Research Portal_files/resourcecollective.js.fullcalendarfullcalendar-cachekey-403005838e546b54f1dcc58dd8cc9b08.css">
+    <style type="text/css" media="screen">@import url(https://www.pik-potsdam.de/portal_css/PIK%20Portal/resourcecollective.js.colorpicker-cachekey-29aad24ec1c462f2acd63693aa1dec76.css);</style>
+    <style type="text/css" media="screen">@import url(https://www.pik-potsdam.de/portal_css/PIK%20Portal/resourceplonetruegallery-portlet-cachekey-5861cec974880f85f91038ca32c731af.css);</style>
+    <link rel="stylesheet" type="text/css" href="./Matlab Distributed Computing Server _ Parallel Computing Toolbox — PIK Research Portal_files/resourceplone.app.jquerytools.dateinput-cachekey-e3463480690908b4ccbcc8aeaf2f01c6.css">
+
+  
+  
+    <script type="text/javascript" src="./Matlab Distributed Computing Server _ Parallel Computing Toolbox — PIK Research Portal_files/resourceplone.app.jquery-cachekey-cb9d5628b8b9199892d8da9371ba05cc.js"></script>
+    <script type="text/javascript" src="./Matlab Distributed Computing Server _ Parallel Computing Toolbox — PIK Research Portal_files/table_sorter-cachekey-64b2eda37eed01a4209793b15edcdd1c.js"></script>
+    <script type="text/javascript" src="./Matlab Distributed Computing Server _ Parallel Computing Toolbox — PIK Research Portal_files/jquery.highlightsearchterms-cachekey-5246dbff1267349a415354cb75e9c1a3.js"></script>
+    <script type="text/javascript" src="./Matlab Distributed Computing Server _ Parallel Computing Toolbox — PIK Research Portal_files/resourcepik.theme.javascriptspiwik-cachekey-0d19fb56d778c6690ec78f16cd8fb2c4.js"></script>
+    <script type="text/javascript" src="./Matlab Distributed Computing Server _ Parallel Computing Toolbox — PIK Research Portal_files/resourcecollective.flowplayerflowplayer.min-cachekey-f4e9064ce614a037faacf4976279ffa6.js"></script>
+    <script type="text/javascript" src="./Matlab Distributed Computing Server _ Parallel Computing Toolbox — PIK Research Portal_files/resourcecollective.js.colorpicker.jseye-cachekey-df153ef6ead2d845dd4b3102bd0a802c.js"></script>
+    <script type="text/javascript" src="./Matlab Distributed Computing Server _ Parallel Computing Toolbox — PIK Research Portal_files/collective.js.jqueryui.custom.min-cachekey-23d44f6a5a6497f6dd901899030e0fbb.js"></script>
+
+
+<title>Matlab Distributed Computing Server / Parallel Computing Toolbox — PIK Research Portal</title>
+
+        
+    <link rel="canonical" href="https://www.pik-potsdam.de/members/linstead/guides/matlab-on-the-cluster">
+
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.pik-potsdam.de/favicon.ico">
+    <link rel="apple-touch-icon" href="https://www.pik-potsdam.de/touch_icon.png">
+
+
+<script type="text/javascript">
+        jQuery(function($){
+            if (typeof($.datepicker) != "undefined"){
+              $.datepicker.setDefaults(
+                jQuery.extend($.datepicker.regional[''],
+                {dateFormat: 'mm/dd/yy'}));
+            }
+        });
+        </script>
+
+
+
+
+    <link rel="search" href="https://www.pik-potsdam.de/@@search" title="Search this site">
+
+
+
+
+        
+        
+
+        
+        
+
+        
+        
+
+        
+        
+    
+
+  </head>
+
+  <body class="template-document_view portaltype-document site-portal section-members subsection-linstead subsection-linstead-guides subsection-linstead-guides-matlab-on-the-cluster icons-on userrole-anonymous" dir="ltr">
+
+    <div id="pikbackground"> &nbsp; <!-- Container for PIK background --></div>
+
+
+    <div id="visual-portal-wrapper" class="lang-en">
+
+      <div id="portal-top">
+        <div id="portal-header">
+    <p class="hiddenStructure">
+  <a accesskey="2" href="https://www.pik-potsdam.de/members/linstead/guides/matlab-on-the-cluster#content">Skip to content.</a> |
+
+  <a accesskey="6" href="https://www.pik-potsdam.de/members/linstead/guides/matlab-on-the-cluster#portal-globalnav">Skip to navigation</a>
+</p>
+
+<ul id="portal-siteactions">
+
+    <li id="siteaction-sitemap"><a href="https://www.pik-potsdam.de/sitemap" accesskey="3" title="Site Map">Site Map</a></li>
+    <li id="siteaction-accessibility"><a href="https://www.pik-potsdam.de/accessibility-info" accesskey="0" title="Accessibility">Accessibility</a></li>
+    <li id="siteaction-impressum"><a href="https://www.pik-potsdam.de/impressum" accesskey="" title="Impressum">Impressum</a></li>
+</ul>
+
+<div id="portal-personaltools-wrapper">
+
+<p class="hiddenStructure">Personal tools</p>
+
+
+
+<ul class="actionMenu deactivated" id="portal-personaltools">
+  <li id="anon-personalbar">
+    
+        <a href="https://www.pik-potsdam.de/login" id="personaltools-login" rel="#pb_1" class="link-overlay" style="cursor: pointer;">Log in</a>
+    
+  </li>
+</ul>
+
+</div>
+
+
+<ul id="portal-languageselector">
+    
+    <li class="currentLanguage language-en">
+        <a href="https://www.pik-potsdam.de/members/linstead/guides/matlab-on-the-cluster/matlab-distributed-computing-toolbox?set_language=en" title="English">English</a>
+    </li>
+    
+    
+    <li class="language-de">
+        <a href="https://www.pik-potsdam.de/members/linstead/guides/matlab-on-the-cluster/matlab-distributed-computing-toolbox?set_language=de" title="Deutsch">Deutsch</a>
+    </li>
+    
+</ul>
+
+
+<div id="portal-searchbox">
+
+    <form id="livesearch0" action="https://www.pik-potsdam.de/@@search">
+
+        <div class="LSBox">
+        <label class="hiddenStructure" for="searchGadget">Search Site</label>
+
+        <input name="SearchableText" type="text" size="18" title="Search Site" placeholder="Search Site" accesskey="4" class="searchField" id="searchGadget" autocomplete="off">
+
+        <input class="searchButton" type="submit" value="Search">
+
+        <div class="searchSection">
+            <input id="searchbox_currentfolder_only" class="noborder" type="checkbox" name="path" value="/portal/members/linstead/guides/matlab-on-the-cluster">
+            <label for="searchbox_currentfolder_only" style="cursor: pointer">
+                only in current section
+            </label>
+        </div>
+
+        <div class="LSResult" id="LSResult"><div class="LSShadow" id="LSShadow"></div></div>
+        </div>
+    </form>
+
+    <div id="portal-advanced-search" class="hiddenStructure">
+        <a href="https://www.pik-potsdam.de/@@search" accesskey="5">
+            Advanced Search…
+        </a>
+    </div>
+
+</div>
+
+<a id="portal-logo" title="Home" accesskey="1" href="https://www.pik-potsdam.de/pik-frontpage">
+    <img src="./Matlab Distributed Computing Server _ Parallel Computing Toolbox — PIK Research Portal_files/transparent.gif" alt="PIK Research Portal" title="PIK Research Portal" height="1" width="1"></a>
+
+
+    <h5 class="hiddenStructure">Sections</h5>
+
+    <ul id="portal-globalnav"><li id="portaltab-institute" class="plain"><a href="https://www.pik-potsdam.de/institute" class="plain" title="">Institute</a>
+                <ul class="submenu">
+                    <li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/institute/mission" class="state-published" title="">
+            
+            Mission
+        </a>
+
+        
+    
+</li>
+
+
+<li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/institute/organization" class="state-published" title="">
+            
+            Organization
+        </a>
+
+        
+    
+</li>
+
+
+<li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/institute/connections" class="state-published" title="">
+            
+            Connections
+        </a>
+
+        
+    
+</li>
+                </ul>
+            </li><li id="portaltab-research" class="plain"><a href="https://www.pik-potsdam.de/research" class="plain" title="">Research</a>
+                <ul class="submenu">
+                    <li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/research/earth-system-analysis" class="state-published" title="">
+            
+            Earth System Analysis
+        </a>
+
+        
+    
+</li>
+
+
+<li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/research/climate-impacts-and-vulnerabilities" class="state-published" title="">
+            
+            Climate Impacts &amp; Vulnerabilities
+        </a>
+
+        
+    
+</li>
+
+
+<li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/research/sustainable-solutions" class="state-published" title="Managing Sustainability">
+            
+            Sustainable Solutions
+        </a>
+
+        
+    
+</li>
+
+
+<li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/research/transdisciplinary-concepts-and-methods" class="state-published" title=" Methods and Technologies">
+            
+            Transdisciplinary Concepts &amp; Methods
+        </a>
+
+        
+    
+</li>
+
+
+<li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/research/projects" class="state-published" title="">
+            
+            Projects &amp; Joint Activities
+        </a>
+
+        
+    
+</li>
+
+
+<li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/research/publications" class="state-published" title="">
+            
+            Publications
+        </a>
+
+        
+    
+</li>
+                </ul>
+            </li><li id="portaltab-news" class="plain"><a href="https://www.pik-potsdam.de/news" class="plain" title="">News</a>
+                <ul class="submenu">
+                    <li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/news/press-releases" class="state-published" title="">
+            
+            Press Releases
+        </a>
+
+        
+    
+</li>
+
+
+<li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/news/in-short" class="state-published" title="">
+            
+            In Short
+        </a>
+
+        
+    
+</li>
+
+
+<li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/news/pik-in-the-media" class="state-published" title="Please find selected media articles featuring or written by researchers from the Potsdam Institute for Climate Impact Research (PIK) here. 
+For articles published only in German, please see the German version of our website.">
+            
+            PIK in the Media
+        </a>
+
+        
+    
+</li>
+
+
+<li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/news/public-events" class="state-published" title="">
+            
+            Public Events
+        </a>
+
+        
+    
+</li>
+
+
+<li>
+
+    
+
+        <a href="http://www.pik-potsdam.de/aktuelles/stellen?set_language=de" class="state-published" title="" target="_blank">
+            
+            Jobs &amp; Practical Training
+        </a>
+
+        
+    
+</li>
+
+
+<li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/news/career" class="state-published" title="">
+            
+            Career
+        </a>
+
+        
+    
+</li>
+                </ul>
+            </li><li id="portaltab-services" class="plain"><a href="https://www.pik-potsdam.de/services" class="plain" title="">Services</a>
+                <ul class="submenu">
+                    <li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/services/it" class="state-published" title="The IT-Services group designs, builds and maintains the computer based infrastructure of the institute. Most importantly the group provides the technological platform for high performance scientific computing – the support and resources required for the development of numerical models, the execution of simulation experiments, the utilization of computer networks and the management of large and complex scientific data-sets for scientists employed by the institute and cooperation partners.">
+            
+            IT-Services
+        </a>
+
+        
+    
+</li>
+
+
+<li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/services/climate-weather-potsdam" class="state-published" title="Measurements series of Long-Term Meteorological Station Potsdam Telegraphenberg.
+The station&#39;s measurements series are representative for the surrounding region for various spatial and temporal scales.">
+            
+            Climate &amp; Weather Potsdam
+        </a>
+
+        
+    
+</li>
+
+
+<li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/services/climateimpactsonline" class="state-published" title="">
+            
+            ClimateImpactsOnline
+        </a>
+
+        
+    
+</li>
+
+
+<li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/services/infodesk" class="state-published" title="On this infothek you will find all sorts of information material on some global and climate change topics at different levels and history of Telegraphenberg.">
+            
+            Info Desk
+        </a>
+
+        
+    
+</li>
+
+
+<li>
+
+    
+
+        <a href="http://bib.telegrafenberg.de/" class="state-published" title="Library Wissenschaftspark Albert Einstein" target="_blank">
+            
+            Local Library
+        </a>
+
+        
+    
+</li>
+                </ul>
+            </li><li id="portaltab-contact" class="plain"><a href="https://www.pik-potsdam.de/contact" class="plain" title="">Contact</a>
+                <ul class="submenu">
+                    <li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/contact/staff" class="state-published" title="">
+            
+            Staff
+        </a>
+
+        
+    
+</li>
+
+
+<li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/contact/where" class="state-published" title="">
+            
+            Location
+        </a>
+
+        
+    
+</li>
+
+
+<li>
+
+    
+
+        <a href="https://www.pik-potsdam.de/contact/pik-pr-office" class="state-published" title="The PIK Press &amp; Public Relations Office issues press releases announcing new research findings or events likely to be of interest to a wide audience. The Press Office helps journalists to get in touch with scientists and support staff for background information. Journalists are welcome to visit PIK for briefing - please contact us to make arrangements. Stunning images and broadcast-quality videos cannot be provided.">
+            
+            PIK PR Office
+        </a>
+
+        
+    
+</li>
+                </ul>
+            </li></ul>
+
+
+</div>
+
+<div id="portal-breadcrumbs">
+
+    <span id="breadcrumbs-you-are-here">You
+are here:</span>
+    <span id="breadcrumbs-home">
+        <a href="https://www.pik-potsdam.de/">Home</a>
+        <span class="breadcrumbSeparator">
+            ›
+            
+        </span>
+    </span>
+    <span id="breadcrumbs-1" dir="ltr">
+        
+            <a href="https://www.pik-potsdam.de/members">PIK Members</a>
+            <span class="breadcrumbSeparator">
+                ›
+                
+            </span>
+            
+         
+    </span>
+    <span id="breadcrumbs-2" dir="ltr">
+        
+            <a href="https://www.pik-potsdam.de/members/linstead">Ciaron Linstead</a>
+            <span class="breadcrumbSeparator">
+                ›
+                
+            </span>
+            
+         
+    </span>
+    <span id="breadcrumbs-3" dir="ltr">
+        
+            <a href="https://www.pik-potsdam.de/members/linstead/guides">Guides</a>
+            <span class="breadcrumbSeparator">
+                ›
+                
+            </span>
+            
+         
+    </span>
+    <span id="breadcrumbs-4" dir="ltr">
+        
+            
+            
+            <span id="breadcrumbs-current">Matlab on the cluster</span>
+         
+    </span>
+
+</div>
+
+
+    <div id="portlets-in-header" class="">
+         
+         
+    </div>
+
+    
+
+
+      </div>
+
+      <div class="visualClear" id="clear-space-before-wrapper-table"><!-- --></div>
+
+      <table id="portal-columns">
+        <tbody>
+          <tr>
+            
+                
+                <td id="portal-column-one">
+                  <div class="visualPadding">
+                    
+                      
+<div class="portletWrapper" data-portlethash="706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f706f7274616c2f6d656d626572730a6e617669676174696f6e" id="portletwrapper-706c6f6e652e6c656674636f6c756d6e0a636f6e746578740a2f706f7274616c2f6d656d626572730a6e617669676174696f6e">
+<dl class="portlet portletNavigationTree">
+
+    <dt class="portletHeader hiddenStructure">
+        <span class="portletTopLeft"></span>
+        <a href="https://www.pik-potsdam.de/members/linstead" class="tile">Navigation</a>
+        <span class="portletTopRight"></span>
+    </dt>
+
+    <dd class="portletItem lastItem">
+        <ul class="navTree navTreeLevel0">
+            <li class="navTreeItem navTreeTopNode nav-section-ciaron-linstead">
+                <div>
+                   <a href="https://www.pik-potsdam.de/members/linstead" class="contenttype-folder" title="Home page area that contains the items created and collected by linstead">
+                   
+                   
+                   Ciaron Linstead
+                   </a>
+                </div>
+            </li>
+            
+
+
+
+<li class="navTreeItem visualNoMarker navTreeItemInPath navTreeFolderish section-guides">
+
+    
+
+
+        <a href="https://www.pik-potsdam.de/members/linstead/guides" class="state-published navTreeItemInPath navTreeFolderish contenttype-folder" title="User guides and documentation">
+            
+            <span>Guides</span>
+        </a>
+
+        
+            <ul class="navTree navTreeLevel1">
+                
+
+
+
+<li class="navTreeItem visualNoMarker navTreeCurrentNode navTreeFolderish section-matlab-on-the-cluster">
+
+    
+
+
+        <a href="https://www.pik-potsdam.de/members/linstead/guides/matlab-on-the-cluster" class="state-published navTreeCurrentItem navTreeCurrentNode navTreeFolderish contenttype-folder" title="">
+            
+            <span>Matlab on the cluster</span>
+        </a>
+
+        
+            <ul class="navTree navTreeLevel2">
+                
+
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-matlab-parallel-computing-example-code">
+
+    
+
+
+        <a href="https://www.pik-potsdam.de/members/linstead/guides/matlab-on-the-cluster/matlab-parallel-computing-example-code" class="state-published navTreeFolderish contenttype-folder" title="">
+            
+            <span>Matlab parallel computing example code</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+
+
+            </ul>
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-python-on-the-cluster">
+
+    
+
+
+        <a href="https://www.pik-potsdam.de/members/linstead/guides/python-on-the-cluster" class="state-published navTreeFolderish contenttype-folder" title="">
+            
+            <span>Python on the cluster</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+
+
+            </ul>
+        
+
+    
+</li>
+
+
+<li class="navTreeItem visualNoMarker navTreeFolderish section-documentation">
+
+    
+
+
+        <a href="https://www.pik-potsdam.de/members/linstead/documentation" class="state-published navTreeFolderish contenttype-folder" title="">
+            
+            <span>Documentation</span>
+        </a>
+
+        
+
+    
+</li>
+
+
+
+
+        </ul>
+        <span class="portletBottomLeft"></span>
+        <span class="portletBottomRight"></span>
+    </dd>
+</dl>
+
+</div>
+
+
+
+
+                    
+                    &nbsp;
+                  </div>
+                </td>
+                
+            
+
+            
+            <td id="portal-column-content">
+
+              <div id="viewlet-above-content"><div id="portlets-above" class="">
+    
+    
+</div>
+
+
+</div>
+
+              
+                <div class="">
+
+                    
+
+                    <span id="contentTopLeft"></span>
+                    <span id="contentTopRight"></span>
+
+                    
+
+    <dl class="portalMessage info" id="kssPortalMessage" style="display:none">
+        <dt>Info</dt>
+        <dd></dd>
+    </dl>
+
+
+
+                    
+                    <div id="content">
+                      
+                      
+
+                        
+                            
+                            
+                                
+                                
+            
+                <h1 id="parent-fieldname-title" class="documentFirstHeading">
+                    Matlab Distributed Computing Server / Parallel Computing Toolbox
+                </h1>
+            
+            
+        
+                            
+                            <div id="portlets-below" class="">
+
+     
+     
+</div>
+
+
+
+
+                            
+                                
+                                
+            
+                <div id="parent-fieldname-description" class="documentDescription">
+                   Using the Matlab Distributed Computing Server and Parallel Computing Toolbox for distributed and parallel computations on the HPC2015 cluster
+                </div>
+            
+            
+        
+                            
+
+                            
+
+
+                            <div id="content-core">
+                                
+    
+        
+        <div class="" id="parent-fieldname-text-a2d617e2df0d0da0090bb703ee043978">
+            <h2>* work in progress - this documentation is subject to change *</h2>
+<h2>Introduction&nbsp;</h2>
+<p>The following document is in two sections, due to differences in the Distributed Computing Engine implementation in Matlab versions R2011b and R2015b.</p>
+<p>The Matlab Distributed Computing Server (DCS) and Parallel Computing Toolbox (PCT) allow Matlab programs to be run non-interactively on the cluster compute nodes.&nbsp;</p>
+<p>This infrastructure allows a single Matlab client instance to submit Matlab tasks to the cluster batch scheduling system (SLURM).</p>
+<p>These tasks can (currently) be independently distributed single-process tasks. The current limit is 32 tasks. (Parallel tasks, e.g. parfor loops, will be implemented later)</p>
+<p>Importantly - given the occasional overbooking of Matlab interactive licences - it is possible to close the Matlab interactive client session while tasks are running on the cluster. Results can then be fetched from the remote tasks at a later time, thereby freeing up interactive licences for colleagues.&nbsp;</p>
+<p>Note that the following guide applies only to Matlab clients started on the cluster - local instances on client laptops or desktops aren't supported. Log in to the cluster with X-forwarding ("ssh -X") to get the Matlab GUI on your client machine.</p>
+<p>Details about the current Matlab installation, number of licences, and how to access it are available <a href="https://www.pik-potsdam.de/services/it/core/software-provisioning/scientific-software/matlab" class="internal-link" title="Matlab">here</a>.</p>
+<h2>Distributed Matlab tasks - R2015b</h2>
+<p><strong>** NB This section relates to Matlab version R2015b - please check your version! **</strong></p>
+<p>Loading the appropriate version:</p>
+<pre>module load matlab/R2015b</pre>
+<p>The following short example shows how to submit independent Matlab tasks as separate cluster jobs.</p>
+<pre><strong>qos='short';</strong><br><strong>account='its';</strong><br>path(strcat(getenv('MATLAB_ROOT'), '/toolbox/distcomp/examples/integration/slurm/shared'), path);<br>cluster = parallel.cluster.Generic('JobStorageLocation', <strong>'/home/linstead/tmp'</strong>);<br>set(cluster, 'HasSharedFilesystem', true);<br>set(cluster, 'ClusterMatlabRoot', '');<br>set(cluster, 'OperatingSystem', 'unix');<br>set(cluster, 'GetJobStateFcn', @getJobStateFcn);<br>set(cluster, 'DeleteJobFcn', @deleteJobFcn);<br>set(cluster, 'IndependentSubmitFcn', {'independentSubmitFcn', qos, account});<br>j = createJob(cluster)<br><strong>t1 = createTask(j, @rand, 1, { {3 3} {5 5} {9 9} });</strong><br>submit(j);<br>get(j);<br>results=getAllOutputArguments(j);<br>results{:}</pre>
+<p>This example generates a set of three tasks (creating 3x3, 5x5 and 9x9 matrices of random numbers), each of which will be submitted via SLURM as cluster jobs. You should set 'qos' and 'account' as appropriate for your job type, as per the SLURM documentation. Other modifications are indicated in the <strong>bold</strong> <strong>sections</strong>. Note that JobStorageLocation must be different to that for previous versions of Matlab, since the job format has changed in later versions.</p>
+<h2>Distributed Matlab tasks - R2011b</h2>
+<h3>** NB This section relates to Matlab version R2011b - please check your version! **</h3>
+<h3>Load Matlab</h3>
+<p>When a Matlab task is submitted it is translated to a SLURM job. SLURM will then schedule the job according to (among other factors) the availability of worker licences.&nbsp;</p>
+<p>The worker licences are managed as SLURM resources, so if no licence is available, the job will be held in the Idle state until one becomes free, rather than failing at runtime for lack of a licence. (For more information about SLURM, see the cluster user guide [2])&nbsp;</p>
+<p>Running "<em>scontrol show licenses</em>" on the cluster command-line will show the availability of floating resources.</p>
+<p>For this version, load the appropriate module:</p>
+<pre>module load matlab/R2011b</pre>
+<h3>Setup</h3>
+<p>Initial setup requires Matlab paths to be set. This can be done in one of two ways:&nbsp;</p>
+<p>1) within Matlab:&nbsp;</p>
+<pre>path(strcat(getenv('MATLAB_ROOT'), '/toolbox/distcomp/slurm'), path);</pre>
+<p>2) on the command-line before starting Matlab, or in ~/.profile, to make the setting persistent:&nbsp;</p>
+<pre>export MATLABPATH=/p/system/packages/matlab/R2011b/toolbox/distcomp/slurm:$MATLABPATH&nbsp;</pre>
+<h3>Example Use&nbsp;</h3>
+<p>The following example demonstrates setup and distribution of multiple independent tasks. This code can be downloaded <a title="" href="https://www.pik-potsdam.de/members/linstead/guides/matlab-on-the-cluster/matlab-distributed-computing-r2011b" class="internal-link" target="_self">here</a>.</p>
+<pre>% JOB SETUP<br>% This section can go into your .matlab/startup.m, but Matlab will<br>% report errors with license checkout. These errors don't seem to<br>% affect runs. (Any Matlab experts know why this happens?)<br><br>% Set the path to be able to find the SLURM interface functions<br>path(strcat(getenv('MATLAB_ROOT'), '/toolbox/distcomp/slurm'), path);<br><br>% We use a Matlab generic scheduler, customised for SLURM <br>sched = findResource('scheduler', 'type', 'generic');<br>set(sched, 'ClusterMatlabRoot', getenv('MATLAB_ROOT'));<br><br>% set the location for storing job-specific data<br>% I'm using /p/tmp/linstead/matlabtmp. This directory needs to exist before <br>% running<br>set(sched, 'DataLocation', strcat('/p/tmp/', getenv('USER'), '/matlabtmp'));<br><br>% set the SLURM job QOS/class (e.g. short, medium, long, io)<br>qos = 'short';<br><br>% set the SLURM job account, i.e. your project group. Mine is 'its', yours <br>% will differ.<br>account = 'its';<br><br>% specify the functions which implement the interfaces between Matlab and <br>% SLURM. Note that 'qos' and 'account' are passed to the submit function. <br><br>set(sched, 'SubmitFcn', {'slurmDistributedSubmitFcn', qos, account});<br>set(sched, 'DestroyJobFcn', 'slurmDestroyJob');<br>set(sched, 'DestroyTaskFcn', 'slurmDestroyTask');<br><br>% END JOB SETUP<br><br>% EXAMPLE JOB<br>% Create a job attached to our scheduler<br>j = createJob(sched);<br><br>% create some tasks, here some random matrices: <br>t1 = createTask(j, @rand, 1, { {3 3} {5 5} {9 9} });<br>t2 = createTask(j, @rand, 1, {2 2});<br>t3 = createTask(j, @rand, 1, {6 6});<br><br>% similarly, jobs can be prepared in a loop: <br>for ii = 1:5<br>&nbsp; % get lists of prime numbers <br>&nbsp; t(ii) = createTask(j, @primes, 1, {ii*10});<br>end<br><br>% ...and submit it.<br>submit(j)<br>% The tasks for this job are submitted to the cluster using <br>% SLURM's sbatch command via a job wrapper:<br>%<br>% In slurmDistributedSubmitFcn<br>% /p/system/slurm/bin/sbatch --ntasks 1 --qos short --account its <br>%   --workdir /p/tmp/linstead/matlabtmp <br>%   '/p/system/packages/matlab/R2011b/toolbox/distcomp/slurm/distributedJobWrapper.sh'<br>% Task: 1; jobID: 41378<br>% /p/system/slurm/bin/sbatch --ntasks 1 --qos short --account its <br>%   --workdir /p/tmp/linstead/matlabtmp <br>%   '/p/system/packages/matlab/R2011b/toolbox/distcomp/slurm/distributedJobWrapper.sh'<br>% Task: 2; jobID: 41379<br>% /p/system/slurm/bin/sbatch --ntasks 1 --qos short --account its <br>%   --workdir /p/tmp/linstead/matlabtmp <br>%   '/p/system/packages/matlab/R2011b/toolbox/distcomp/slurm/distributedJobWrapper.sh'<br>% Task: 3; jobID: 41380<br><br>% check job status<br>get(j)<br><br>% Job status output looks like this:<br>%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Configuration: ''<br>%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name: 'Job11'<br>%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ID: 11<br>%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UserName: 'linstead'<br>%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tag: ''<br>%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; State: 'finished'<br>%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CreateTime: 'Thu Jan 28 15:19:45 CET 2016'<br>%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; SubmitTime: 'Thu Jan 28 15:19:55 CET 2016'<br>%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; StartTime: 'Thu Jan 28 14:19:58 GMT 2016'<br>%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FinishTime: 'Thu Jan 28 14:20:03 GMT 2016'<br>%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Tasks: [3x1 distcomp.simpletask]<br>%&nbsp;&nbsp;&nbsp; FileDependencies: {0x1 cell}<br>%&nbsp;&nbsp;&nbsp; PathDependencies: {0x1 cell}<br>%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; JobData: []<br>%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Parent: [1x1 distcomp.genericscheduler]<br>%&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UserData: []<br><br>% if it's finished, get results<br>results=getAllOutputArguments(j);<br><br>% show results<br>results{:}<br>
+% At this point, you can quit the interactive Matlab session and fetch the&nbsp;
+% output data from your tasks at a later time.&nbsp;
+
+% To cancel a task (i.e. a SLURM job) and clean up:&nbsp;
+destroy(t1);&nbsp;
+
+% You can also cancel a task manually, by running 'scancel &lt;jobID&gt;' on the&nbsp;
+% command-line.&nbsp;
+
+% The following is only necessary if you need to wait for data to be&nbsp;
+% returned. It will block further interaction until SLURM has&nbsp;
+% returned and thus not recommended for jobs taking longer than a few seconds.&nbsp;
+<br>waitForState(j);&nbsp;
+
+% to see the current state of the job
+get(j);&nbsp;
+
+% fetch all return data
+results = getAllOutputArguments(j);&nbsp;
+
+% see the results:&nbsp;
+results{:} <br><br>% ans =<br>%<br>%&nbsp;&nbsp;&nbsp; 0.9173&nbsp;&nbsp;&nbsp; 0.4809&nbsp;&nbsp;&nbsp; 0.4626<br>%&nbsp;&nbsp;&nbsp; 0.6839&nbsp;&nbsp;&nbsp; 0.4612&nbsp;&nbsp;&nbsp; 0.8009<br>%&nbsp;&nbsp;&nbsp; 0.8661&nbsp;&nbsp;&nbsp; 0.1562&nbsp;&nbsp;&nbsp; 0.2155<br>%<br>%<br><br>% to cancel the entire job and all associated tasks, and clean up:&nbsp;
+destroy(j);&nbsp;
+
+% Unless you run the destroy(job) function, job state for previous
+% submissions is kept on disk at the location specified by the
+% 'DataLocation' parameter set above. To fetch previous jobs:&nbsp;
+sched = findResource('scheduler','type','generic');&nbsp;
+
+% set the DataLocation for the previous runs:&nbsp;
+set(sched, 'DataLocation', strcat('/p/tmp/', getenv('USER'), '/matlabtmp'));
+
+% get a list of jobs:&nbsp;
+all_jobs = get(sched, 'Jobs');
+
+% jobs can be accessed by index...&nbsp;
+job9 = all_jobs(9);&nbsp;
+
+% ... and queried as before:&nbsp;
+results = getAllOutputArguments(job9);</pre>
+<p>&nbsp;</p>
+<h2>OLD DOCUMENTATION BELOW HERE! NOT IMPLEMENTED FOR R2011b!!</h2>
+<h2>Parallel Matlab tasks with communication.</h2>
+<p>Matlab parallel applications are split between workers known as <em>labs</em>. In much the same way as MPI provides <em>MPI_Comm_rank()</em> and <em>MPI_Comm_size()</em> for controlling communication between it's tasks, the PCT provides the <em>labindex</em>&nbsp;and <em>numlabs</em>&nbsp;variables. (In contrast, tasks in loops automatically parallelised with <em>parfor</em> may not communicate).</p>
+<p>The configuration for parallel jobs is similar to the above, with the addition of the following:</p>
+<pre>% specify the number of parallel processes to use
+np = 8;
+
+% specify the custom parallel submit function
+set(sched, 'ParallelSubmitFcn', {@loadlParallelSubmitFcn, class, group});
+
+% create a parallel job
+pjob = createParallelJob(sched);
+
+% file dependencies are the files that will be copied to the executing nodes
+% ...in this case my naive parallel Matlab function for counting prime numbers
+set(pjob, 'FileDependencies', {'/home/linstead/pprime.m'});
+
+% using the same 'np' in these two variables means you want to run on 
+% exactly that many processors. You can also specify a lower and upper
+% value, and Matlab will use as many workers as currently available
+set(pjob, 'MaximumNumberOfWorkers', np);
+set(pjob, 'MinimumNumberOfWorkers', np);
+
+% create a task in this job. createTask takes the parameters:
+% job, function, number_of_output_arguments, {inputargument1, ...}
+t = createTask(pjob, @pprime, 2, {1, 100000})
+
+% and finally, submit the job.
+submit(pjob);</pre>
+<p>The function being run here (<em>pprime.m</em>) counts the prime numbers between two bounds. Since the input range <em>[lower..upper]</em> can be split into independent chunks, this code is a prime :) candidate for parallelisation. It returns a pair: the count itself and the time the loop took to execute. In the parallel enviroment, the output will be an array of pairs of size <em>numlabs, </em>each pair containing the total and the time taken on each lab.</p>
+<h3>pprimes.m</h3>
+<pre>function [total, time] = pprime(lower, upper)
+
+&nbsp; % somewhere to store the sum for the local labindex:
+&nbsp; localsum = 0;
+
+&nbsp; % calculate the lower and upper bounds of the chumk this labindex
+  % will count.
+&nbsp; % note: labindex goes from 1..n, unlike MPI rank which is 0-based
+&nbsp; chunksize = idivide(int32(upper-lower), numlabs);
+&nbsp; mylower = lower + ((labindex-1) * (chunksize+1));
+&nbsp; myupper = mylower + chunksize;
+
+&nbsp; % start a timer to benchmark the main loop
+&nbsp; ticID = tic;
+
+&nbsp; % loop over the local bounds
+&nbsp; for i = mylower : myupper
+&nbsp; &nbsp; isprime = 1; % initially TRUE
+&nbsp; &nbsp; if i &lt;= 1
+&nbsp; &nbsp; &nbsp; &nbsp; isprime = 0; % FALSE
+&nbsp; &nbsp; elseif i == 2
+&nbsp; &nbsp; &nbsp; &nbsp; isprime = 1; % TRUE
+&nbsp; &nbsp; else
+&nbsp; &nbsp; &nbsp; &nbsp; for j = 2 : i-1
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ( mod (i, j) == 0 )
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; isprime = 0; %FALSE
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; end
+&nbsp; &nbsp; &nbsp; &nbsp; end
+&nbsp; &nbsp; end
+&nbsp; &nbsp; if isprime == 1
+&nbsp; &nbsp; &nbsp; &nbsp; % here we increment just our local sum
+&nbsp; &nbsp; &nbsp; &nbsp; localsum = localsum + 1;
+&nbsp; &nbsp; end
+&nbsp; end
+
+&nbsp; % stop the timer
+&nbsp; time = toc(ticID);
+
+&nbsp; % update the global total based on all the localsums
+&nbsp; total = gplus(localsum);
+end</pre>
+<h2>Parallel Matlab tasks with 'parfor'</h2>
+<p>The <em>pprime</em> example doesn't need to take advantage of the ability of labs to communicate (eg. via <em>labBroadcast</em>). Each iteration of the main loop is independent of the others so the code could be simplified with the <em>parfor</em>&nbsp;loop construct.</p>
+<p>Parfor requires a <em>matlabpool</em>&nbsp;which in turn requires a configuration on the client. Let's do that:</p>
+<h3>Setting up a matlabpool configuration</h3>
+<p>In the Matlab GUI client, select menu item "Parallel", then "Manage Configurations".</p>
+<p>Select 'File', 'New', then 'generic' from the list of options</p>
+<p>(A warning about configuring cluster machines may appear at this point, just click OK)</p>
+<p>"Configuration name" and "Description" can be set to whatever values you prefer. The name will be used when starting a matlabpool job. The rest of the values can be filled in as below (changing any paths to your own scratch or home directory. FileDependencies can be set per-job rather than per-configuration, too, so you can leave that field empty.)</p>
+<p>The Scheduler tab:</p>
+<p><img src="./Matlab Distributed Computing Server _ Parallel Computing Toolbox — PIK Research Portal_files/image_large" alt="matlab_conf1" class="image-inline image-inline" title="matlab_conf1"></p>
+<p>&nbsp;</p>
+<p>&nbsp;The Jobs tab:</p>
+<p><img src="./Matlab Distributed Computing Server _ Parallel Computing Toolbox — PIK Research Portal_files/image_large(1)" alt="matlab_conf2" class="image-inline" title="matlab_conf2"></p>
+<h3>Running a parfor job</h3>
+<p>The code for setting up schedulers and jobs is almost identical to the <em>pprime</em> example, but this time replace</p>
+<pre>pjob = createParallelJob(sched);</pre>
+<p>with</p>
+<pre>pjob = createMatlabPoolJob('configuration', 'loadl')</pre>
+<p>and the location of our simplified primes function is set thus:</p>
+<pre>set(pjob, 'FileDependencies', {'/home/linstead/prime.m'});</pre>
+<p>Submitting the job then opens a matlabpool of the required size, runs the job, and shuts down the pool.</p>
+<h3>prime.m</h3>
+<pre>function [total time] = prime(lower, upper)
+%% prime counts the prime numbers between lower and upper bounds
+&nbsp; total = 0;
+&nbsp; % start a timer to benchmark the main loop
+&nbsp; ticID = tic;
+&nbsp; parfor i = lower : upper
+&nbsp; &nbsp; isprime = 1; % TRUE
+&nbsp; &nbsp; if i &lt;= 1
+&nbsp; &nbsp; &nbsp; &nbsp; isprime = 0; % FALSE
+&nbsp; &nbsp; elseif i == 2
+&nbsp; &nbsp; &nbsp; &nbsp; isprime = 1; % TRUE
+&nbsp; &nbsp; else
+&nbsp; &nbsp; &nbsp; &nbsp; for j = 2 : i-1
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; if ( mod (i, j) == 0 )
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; isprime = 0; %FALSE
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; end
+&nbsp; &nbsp; &nbsp; &nbsp; end
+&nbsp; &nbsp; end
+&nbsp; &nbsp; if isprime == 1
+&nbsp; &nbsp; &nbsp; &nbsp; total = total + 1;
+&nbsp; &nbsp; end
+&nbsp; end
+&nbsp; % stop the timer
+&nbsp; time = toc(ticID);
+end</pre>
+<p>It's also possible to open a 'loadl' matlabpool interactively. It's recommended that you only use this for testing, since a pool opened this way blocks a client licence, plus <em>np</em>&nbsp;worker licences, plus <em>np </em>cluster processors until the pool is manually closed!</p>
+<h2>Known problems/bugs:</h2>
+<p>Because the Distributed Server/Parallel Computing Toolbox does not directly support LoadLeveler, this configuration has required customisation of existing generic interfaces.&nbsp;As such, not all of the features documented by Mathworks may be available here. Feedback on your experiences using these tools would be much appreciated.</p>
+<h2>References:&nbsp;</h2>
+<p>[1] Parallel Computing Toolbox: <a class="external-link" href="http://www.mathworks.com/help/pdf_doc/distcomp/distcomp.pdf" target="_blank">http://www.mathworks.com/help/pdf_doc/distcomp/distcomp.pdf</a>&nbsp;</p>
+<p>[2] PIK Cluster Computing Guide:&nbsp;<a href="https://www.pik-potsdam.de/services/it/hpc/.archive/HPC2009/idataplex-cluster-user-guide-january-2012" class="internal-link" title="iDataPlex Cluster User Guide - January 2012">iDataPlex Cluster User Guide - January 2012</a></p>
+            
+        </div>
+    
+    
+
+                            </div>
+                            
+
+
+
+
+
+
+
+    <div class="visualClear"><!-- --></div>
+
+    <div class="documentActions">
+        
+
+            <p class="hiddenStructure">
+              Document Actions
+            </p>
+
+            <ul>
+                  <li id="document-action-print">
+                      <a href="javascript:this.print();" title="">Print this Page</a>
+                  </li>
+            </ul>
+        
+
+        
+
+    </div>
+
+
+                        
+
+                      
+                    </div>
+                    
+
+                    
+
+                    <span id="contentBottomLeft"></span>
+                    <span id="contentBottomRight"></span>
+
+                </div>
+              
+
+              <div id="viewlet-below-content">
+
+
+<div id="portlets-below" class="">
+     
+     
+</div>
+
+
+</div>
+
+            </td>
+            
+
+            
+                
+                
+                
+            
+          </tr>
+        </tbody>
+      </table>
+      
+
+      <div class="visualClear" id="clear-space-before-footer"><!-- --></div>
+
+      
+
+        <div id="portlets-footer" class="">
+     
+     
+</div>
+
+
+
+<div id="portal-footer">
+
+  <div class="body">
+
+      <a href="http://www.wgl.de/" target="_blank">
+         <img src="./Matlab Distributed Computing Server _ Parallel Computing Toolbox — PIK Research Portal_files/wgl_logo.png" alt="" title="Logo of Leibniz Association" height="68" width="100"></a>
+
+
+  </div>
+
+</div>
+
+
+
+      
+
+      <div class="visualClear"><!-- --></div>
+    </div>
+
+
+
+
+</body></html>
