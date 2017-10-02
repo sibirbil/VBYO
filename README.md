@@ -63,9 +63,9 @@ Program detayları aşağıda verilmiştir.
 
 1. PyMC3 ile Bayesci olasılık modelleri
 2. Bir dağılımın parametrelerini kestirme
-3. Doğrusal regresyon ve lojistik regresyon için parametre kestirimi
+3. Karışım modelleri, hiyerarşik modeller
 4. Değişim noktası modelleri
-5. Saklı Markov modelleri
+5. Doğrusal bağlanım
 
 ### Paralel Programlama (Kamer Kaya)
 
