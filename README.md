@@ -1,6 +1,6 @@
 # Veri Bilim - Yapay Öğrenme Yaz Okulu, 2017<br />"Matematiksel Temeller ve Vaka Çalışmaları"
 
-Yaz okulu sonunda katılımcılardan toplanan 4.100 TL'yi, masrafları düştükten sonra, [Çağdaş Yaşamı Destekleme Derneği'ne](https://www.cydd.org.tr/) bağışladık. Hepinize çok teşekkürler!
+Yaz okulu sonunda katılımcılardan toplanan 4.100 TL'yi [Çağdaş Yaşamı Destekleme Derneği'ne](https://www.cydd.org.tr/) bağışladık. Hepinize çok teşekkürler!
 
 ---
 
