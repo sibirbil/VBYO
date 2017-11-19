@@ -1,0 +1,19 @@
+
+Giris sunumunda gosterilen Jupyter notebooklar:
+
+https://github.com/atcemgil/notes
+
+Ozellikle:
+
+Regression.ipynb
+LogisticRegression.ipynb
+Sampling.ipynb
+
+Yapay ogrenme ile konu basliklari ve ilgili kitaplar:
+
+https://www.cmpe.boun.edu.tr/~cemgil/pilab_yeterlilik.html
+
+
+
+
+
